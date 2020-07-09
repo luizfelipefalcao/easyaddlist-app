@@ -1,48 +1,23 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Head, Logo, MenuOpt, About, Login } from './styles';
-import { BsPerson } from 'react-icons/bs';
+import { Head, Logo, MenuOpt, About } from './styles';
+
 
 class Header extends Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            logged: ''
-        }
-    }
 
     render(){
         return(
             <Head>
-                <Logo>EasyAdd</Logo>
-                { this.state.logged === ''
-                ?
+                <Link to='/'>
+                    <Logo>EasyAdd</Logo>
+                </Link>
                 <MenuOpt>
                     <Link to='/about'>
-                        <About>About</About>
-                    </Link>
-                    <Link to='/login'>
-                        <Login>
-                            <h1>Login</h1>
-                            <BsPerson size={33}/>
-                        </Login>
+                        <About>
+                            <h2>About</h2>
+                        </About>
                     </Link>
                 </MenuOpt>
-                :
-                <MenuOpt>
-                    <Link to='/about'>
-                        <About>New List</About>
-                    </Link>
-                    <Link to='/login'>
-                        <Login>
-                            <h1>Logoff</h1>
-                            <BsPerson size={33}/>
-                        </Login>
-                    </Link>
-                </MenuOpt>
-
-                }
             </Head>
         );
     }

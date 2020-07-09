@@ -1,12 +1,26 @@
 import styled from 'styled-components';
 
 export const Head  = styled.header`
-    background-color: yellow;
+  /* @import url('https://fonts.googleapis.com/css2?family=Baloo+2'); */
+
+    background-color: #FECD00;
     height: 70px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-content: center;
     padding: 5px 10px;
+    font-family: 'Baloo 2', sans-serif;
+
+    a {
+        text-decoration: none;
+        color: #006A88;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 5px 10px;
+    }
 `;
 
 export const Logo = styled.div`
@@ -16,9 +30,8 @@ export const Logo = styled.div`
     justify-content: center;
     padding: 5px 10px;
     font-size: 2rem;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: darkblue;
+    font-weight: bolder;
+    color: #006A88;
 `;
 
 export const MenuOpt = styled.div`
@@ -26,30 +39,45 @@ export const MenuOpt = styled.div`
     padding: 5px 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    color:blue;
-    font-size: 2rem;
-    font-weight: bold;
-    width: 250px;
+    justify-content: center;
+    width: 100px;
+`;
 
-    a {
-        text-decoration: none;
-        color: darkblue;
-        cursor: pointer
+export const About = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100px;
+
+    h1 {
+        color: #006A88;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
     }
 `;
 
-export const About = styled.h1`
-    font-size: 1.5rem;
-`
 export const Login = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100px;
+`;
 
-    h1 {
-        font-size: 1.5rem
-    }
-`
+export const SignUp = styled.h2`
+    border: 2px solid #006A88;
+    border-radius: 7px;
+    padding: 5px;
 
+    &:hover {
+        background: #006A88;
+        transition: 1s;
+        color: #FECD00;
+        font-weight: bold;
+}
+`;

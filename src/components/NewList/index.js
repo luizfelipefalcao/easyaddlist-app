@@ -1,9 +1,10 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import { Main } from './styles';
 
 function NewList() {
     return(
-        <h1>NewList</h1>
+        <Main>NewList</Main>
     );
 }
 

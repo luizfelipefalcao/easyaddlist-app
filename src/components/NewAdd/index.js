@@ -1,9 +1,10 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import { Main } from './styles';
 
 function NewAdd() {
     return(
-        <h1>NewAdd</h1>
+        <Main>NewAdd</Main>
     );
 }
 
