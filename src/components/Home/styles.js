@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     min-height: 500px;
     width: 50%;
     margin: 50% auto;
@@ -16,6 +16,10 @@ export const Main = styled.div`
 `;
 
 export const NewList = styled.div`
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     h1 {
         font-size: 2rem;
@@ -23,11 +27,17 @@ export const NewList = styled.div`
     }
 `;
 
-export const PlusBtn = styled.h1`
-        font-size: 4rem;
-        color: lightskyblue;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        cursor: pointer; 
+export const PlusBtn = styled.div`
+        margin-right: 10px;
+        margin-bottom: 0px;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 3rem;
+            color: blue;
+            cursor: pointer; 
+            background: lightcyan
+        }
 `;

@@ -11,7 +11,7 @@ function Home() {
             </NewList>
             <Link to='newlist'>
                 <PlusBtn>
-                    <BsFillPlusCircleFill/>
+                    <h2><BsFillPlusCircleFill/></h2>
                 </PlusBtn>
             </Link>
         </Main>
