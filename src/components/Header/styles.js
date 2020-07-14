@@ -11,6 +11,9 @@ export const Head  = styled.header`
     align-content: center;
     padding: 5px 10px;
     font-family: 'Baloo 2', sans-serif;
+    -webkit-box-shadow: 0px 11px 15px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 11px 15px -17px rgba(0,0,0,0.75);
+    box-shadow: 0px 11px 15px -17px rgba(0,0,0,0.75);
 
     a {
         text-decoration: none;

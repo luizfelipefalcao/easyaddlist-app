@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Tutorial = styled.div`
-    min-height: 500px;
+    min-height: 300px;
     width: 50%;
     margin: 50% auto;
     margin-top: 50px;
@@ -19,7 +19,7 @@ export const Header = styled.h1`
 
 export const Instructions = styled.div`
         margin: 30px;
-        height: 270px;
+        height: 170px;
 
         p {
             color: #000;

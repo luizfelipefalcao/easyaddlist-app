@@ -9,7 +9,7 @@ function Home() {
             <NewList>
                 <h1>Create new list</h1>
             </NewList>
-            <Link to='newlist'>
+            <Link to='newadd'>
                 <PlusBtn>
                     <h2><BsFillPlusCircleFill/></h2>
                 </PlusBtn>

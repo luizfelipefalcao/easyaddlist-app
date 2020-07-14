@@ -5,7 +5,6 @@ export const Main = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 500px;
     width: 50%;
     margin: 50% auto;
     margin-top: 50px;
@@ -13,4 +12,36 @@ export const Main = styled.div`
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
+`;
+
+export const AddName = styled.div`
+    width: 90%;
+    height: 40px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+
+    input {
+        height: 40px;
+        width: 100%;
+        margin-left: 10px;
+        padding: 5px;
+        border-radius: 50px;
+        border: 2px solid #eee;
+        color: #ccc;
+        font-size: 1rem;
+        padding: 5px 15px;
+    }
+
+    a {
+        margin-left: 7px;
+        font-size: 2.8rem;
+        display: flex;
+        justify-self: center;
+        color:  #006A88;
+    }
+
+    a:hover {
+        color: #04475a;
+    }
 `;

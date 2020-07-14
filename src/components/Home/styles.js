@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-    min-height: 500px;
+    min-height: 300px;
     width: 50%;
     margin: 50% auto;
     margin-top: 50px;
@@ -16,28 +12,31 @@ export const Main = styled.div`
 `;
 
 export const NewList = styled.div`
-    background: blue;
+    height: 280px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     h1 {
         font-size: 2rem;
-        color: rgba(204, 204, 204, 0.6);
+        color: rgba(204, 204, 204, 0.5);
     }
 `;
 
 export const PlusBtn = styled.div`
-        margin-right: 10px;
-        margin-bottom: 0px;
+        text-align: center;
 
         h2 {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
             font-size: 3rem;
-            color: blue;
-            cursor: pointer; 
-            background: lightcyan
+            margin-bottom: 10px;
+            margin-right: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            color: #006A88;
+        }
+
+        h2:hover {
+            color:#023442
         }
 `;
