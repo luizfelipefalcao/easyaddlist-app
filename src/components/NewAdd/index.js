@@ -11,14 +11,19 @@ class NewAdd extends Component {
 
         }
 
-        this.handleNewList = this.handleNewList.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleNewAdd = this.handleNewAdd.bind(this);
     }
 
-    handleNewList(e){
+    handleChange(e){
+        this.setState({ listname: e.target.value })
+    }
+
+    handleNewAdd(e){
         e.preventDefault();
 
+        localStorage.setItem('listname', this.state.listname);
         this.props.history.push("/newlist");
-        console.log('Funcionou!!');
     }
 
     render(){
@@ -28,10 +33,10 @@ class NewAdd extends Component {
                     <input
                         type='text'
                         value={this.state.listname}
-                        onChange={(e) => this.setState({ listname: e.target.value })}
+                        onChange={this.handleChange}
                         placeholder="Type your list name..."
                     />
-                    <Link to='/newlist' onClick={this.handleNewList}>
+                    <Link to='/newlist' onClick={this.handleNewAdd}>
                         <AiFillPlusCircle/>
                     </Link>
                 </AddName>

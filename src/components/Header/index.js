@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { Head, Logo, MenuOpt, About } from './styles';
+import { Head, Logo, About } from './styles';
 
 
 class Header extends Component {
@@ -8,16 +8,16 @@ class Header extends Component {
     render(){
         return(
             <Head>
-                <Link to='/'>
-                    <Logo>EasyAdd</Logo>
-                </Link>
-                <MenuOpt>
+                <div>
+                    <Link to='/'>
+                        <Logo>EasyAdd</Logo>
+                    </Link>
                     <Link to='/about'>
                         <About>
                             <h2>About</h2>
                         </About>
                     </Link>
-                </MenuOpt>
+                </div>
             </Head>
         );
     }

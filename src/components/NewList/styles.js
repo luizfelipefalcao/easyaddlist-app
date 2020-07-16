@@ -14,7 +14,7 @@ export const Main = styled.div`
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
 `;
 
-export const ListName = styled.div`
+export const FormList = styled.form`
     width: 90%;
     height: 40px;
     margin: 20px;
@@ -41,3 +41,39 @@ export const ListName = styled.div`
         color:  #006A88;
     }
 `;
+
+export const ListTitle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 5px;
+    margin-top: 5px;
+
+    h2 {
+    color: #055e77;
+    font-size: 1.2rem;
+    }
+`;
+
+export const ListBody = styled.table`
+    background: lightcyan;
+    width: 90%;
+`;
+
+export const TableBody = styled.tbody`
+    /* background:blue; */
+
+    tr {
+        color: yellow;
+    }
+
+    `;
+export const TdDescription = styled.td`
+    background:red
+`;
+
+export const TdButton = styled.td`
+    background:blue
+`;
+        
