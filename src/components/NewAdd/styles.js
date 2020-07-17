@@ -28,9 +28,11 @@ export const AddName = styled.div`
         padding: 5px;
         border-radius: 50px;
         border: 2px solid #eee;
-        color: #ccc;
+        color: #888;
         font-size: 1rem;
         padding: 5px 15px;
+
+
     }
 
     a {

@@ -22,20 +22,19 @@ export const FormList = styled.form`
     align-items: center;
 
     input {
-        height: 40px;
+        height: 2.3rem;
         width: 100%;
-        margin-left: 10px;
-        padding: 5px;
+        font-size: 1rem;
+        padding: 5px 10px;
+        margin-left: 5px;
         border-radius: 50px;
         border: 2px solid #eee;
         color: #ccc;
-        font-size: 1rem;
-        padding: 5px 15px;
     }
 
     a {
         margin-left: 7px;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         display: flex;
         justify-self: center;
         color:  #006A88;
@@ -52,28 +51,40 @@ export const ListTitle = styled.div`
 
     h2 {
     color: #055e77;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     }
 `;
 
 export const ListBody = styled.table`
-    background: lightcyan;
     width: 90%;
+    margin-top: 10px;
 `;
 
 export const TableBody = styled.tbody`
-    /* background:blue; */
 
     tr {
-        color: yellow;
+        padding: 5px;
     }
 
     `;
 export const TdDescription = styled.td`
-    background:red
+    height: 2rem;
+    width: 80%;
+    padding-left: 10px;
+    color: #000;
+    font-size: 1.1rem;
+    text-decoration: dotted;
+  text-decoration-color: red;
+    /* background: lightblue; */
+
 `;
 
 export const TdButton = styled.td`
-    background:blue
+    height: 2rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+
 `;
         

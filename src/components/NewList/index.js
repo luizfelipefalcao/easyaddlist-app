@@ -1,25 +1,57 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Main, FormList, ListTitle, ListBody, TableBody, TdDescription, TdButton } from './styles';
-import { AiFillPlusCircle, AiOutlineDelete, AiOutlineUndo } from 'react-icons/ai';
+import { AiFillPlusCircle, AiOutlineUndo } from 'react-icons/ai';
 import { BsCheckAll } from 'react-icons/bs';
+import { FaTrashAlt } from 'react-icons/fa';
 
 class NewList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            listTitle: localStorage.listTitle,
-            list
-            description: ''
+            new_items: [],
+            items: localStorage.new_item,
+            description: '',
+            listTitle: localStorage.listname,
         }
-
+        
         this.handleChange = this.handleChange.bind(this);
+        this.addItem = this.addItem.bind(this);
+        this.addStorage = this.addStorage.bind(this);
     }
 
     handleChange(e) {
         this.setState({ description: e.target.value })
-        console.log(this.state.description); 
     }
+
+    addStorage(e) {
+      e.preventDefault();
+
+      const items = this._taskInput.value;
+
+      const new_item = JSON.parse(localStorage.getItem('new-item') || '[]');
+        new_item.push({
+          new_item: items
+      });      
+
+      localStorage.setItem('new-item', JSON.stringify(new_item)); 
+      this.setState({ new_items: items}); 
+
+      // this.addItem();
+    }
+
+    addItem() {
+      // let state = this.state;
+      if (this.state.new_items !== '') {
+        let newItem = {
+          text: this.state.new_items
+        };
+        this.setState({ items: [...this.state.items, newItem] });
+      }
+      this.setState({ description: '' });
+
+
+    };
 
     render(){
         return (
@@ -27,36 +59,22 @@ class NewList extends Component {
                 <ListTitle>
                     <h2>{this.state.listTitle}</h2>
                 </ListTitle>
-                <FormList>
+                <FormList onSubmit={this.addItem}>
                     <input
                         type="text"
                         placeholder="Type to add a new item.."
-                        name="tarefa"
+                        name="description"
                         value={this.state.description}
                         onChange={this.handleChange}
-                        ref={(e) => (this._tarefaInput = e)}
+                        ref={(e) => (this._taskInput = e)}
                     />
                     <Link to='/newlist'>
-                        <AiFillPlusCircle/>
+                        <AiFillPlusCircle onClick={this.addStorage}/>
                     </Link>
                 </FormList>
                 
-                <TodoItems lista={this.state.items} />
+                <TodoItems list={this.state.items}/>
 
-                <ListBody>
-                    <TableBody>
-                        <tr>
-                    <TdDescription>
-                        {this.state.description}</TdDescription>
-                            <TdButton>
-                                <BsCheckAll/>
-                                <AiOutlineUndo/>
-                                <AiOutlineDelete/>
-                            </TdButton>
-                        </tr>
-                    </TableBody>
-
-                </ListBody>
             </Main>
         )
     }
@@ -65,17 +83,24 @@ class NewList extends Component {
 class TodoItems extends Component {
     render() {
       return (
-        <div>
-          <ul>
+        <ListBody>
+            <TableBody>
             {this.props.list.map((item) => {
               return (
-                <li>
-                  key={item.key} {item.text}
-                </li>
+                <tr key={item.key}>
+                  <TdDescription>
+                    {item.text}
+                  </TdDescription>
+                  <TdButton>
+                      <BsCheckAll color={'green'}/>
+                      <FaTrashAlt color={'red'} size={15}/>
+                      <AiOutlineUndo color={'yellow'}/>
+                  </TdButton>
+                </tr>
               );
             })}
-          </ul>
-        </div>
+            </TableBody>
+        </ListBody>
       );
     }
   }
