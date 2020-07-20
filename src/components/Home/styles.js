@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-    min-height: 300px;
+    min-height: 250px;
     width: 50%;
     margin: 50% auto;
     margin-top: 50px;
@@ -9,6 +9,11 @@ export const Main = styled.div`
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
+
+    @media(max-width: 679px) {
+    width: 90%;
+    min-height: 200px;
+  }
 `;
 
 export const NewList = styled.div`

@@ -1,22 +1,28 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Mono|Baloo+2&display=swap');
+  
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
+
   html {
-    font-size: 62.5%;
+    /* font-size: 90%; */
+    background-color: #ebebeb;
+
   }
 
-  html, body, #__next {
+  /* html, body {
     height: 100%;
-  }
+  } */
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: 'Baloo 2', sans-serif;
+    -webkit-font-smoothing: antialiased !important;
   }
 `
 

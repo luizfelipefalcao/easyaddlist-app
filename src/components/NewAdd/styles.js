@@ -12,6 +12,10 @@ export const Main = styled.div`
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
+
+    @media(max-width: 679px) {
+    width: 90%;
+  }
 `;
 
 export const AddName = styled.div`
