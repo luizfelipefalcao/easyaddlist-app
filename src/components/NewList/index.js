@@ -10,7 +10,7 @@ class NewList extends Component {
         super(props);
         this.state = {
             new_items: [],
-            items: localStorage.new_item,
+            items: [],
             description: '',
             listTitle: localStorage.listname,
         }
@@ -37,20 +37,18 @@ class NewList extends Component {
       localStorage.setItem('new-item', JSON.stringify(new_item)); 
       this.setState({ new_items: items}); 
 
-      // this.addItem();
+      this.addItem();
     }
 
     addItem() {
-      // let state = this.state;
-      if (this.state.new_items !== '') {
+      let state = this.state;
+      if (this._taskInput.value !== '') {
         let newItem = {
-          text: this.state.new_items
+          text: this._taskInput.value
         };
-        this.setState({ items: [...this.state.items, newItem] });
-      }
+        this.setState({ items: [...state.items, newItem] });
+      } console.log(this.state.items);
       this.setState({ description: '' });
-
-
     };
 
     render(){

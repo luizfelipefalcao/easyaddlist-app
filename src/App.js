@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import GlobalStyles from '../src/styles/global'
 
 import Home from '../src/components/Home';
 import Header from '../src/components/Header';
@@ -16,6 +17,7 @@ function App() {
   return (
 
     <React.Fragment>
+      <GlobalStyles />
       <BrowserRouter>
         <Header path='/' component={Home}/>
         <Switch>
