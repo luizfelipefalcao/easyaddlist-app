@@ -8,7 +8,7 @@ import NewAdd from '../src/components/NewAdd';
 import NewList from '../src/components/NewList';
 import About from '../src/components/About';
 import NotFound from '../src/components/NotFound';
-// import Footer from '../src/components/Footer';
+import Footer from '../src/components/Footer';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route exact path='/about' component={About}/>
           <Route path='*' component={NotFound}/>
         </Switch>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </React.Fragment>
 

@@ -30,8 +30,8 @@ export const AddName = styled.div`
         width: 100%;
         margin-left: 10px;
         padding: 5px;
-        border-radius: 50px;
-        border: 2px solid #eee;
+        border-radius: 15px;
+        border: 2px solid #ddd;
         color: #888;
         font-size: 1rem;
         padding: 5px 15px;

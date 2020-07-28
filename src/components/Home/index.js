@@ -6,13 +6,13 @@ import { BsFillPlusCircleFill } from 'react-icons/bs';
 function Home() {
     return(
         <Main>
-            <NewList>
+            {/* <NewList> */}
                 <h1>Create new list</h1>
-            </NewList>
+            {/* </NewList> */}
             <Link to='newadd'>
-                <PlusBtn>
-                    <h2><BsFillPlusCircleFill/></h2>
-                </PlusBtn>
+                {/* <PlusBtn> */}
+                <BsFillPlusCircleFill/>
+                {/* </PlusBtn> */}
             </Link>
         </Main>
     );

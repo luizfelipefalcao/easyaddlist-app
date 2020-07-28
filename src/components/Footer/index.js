@@ -1,9 +1,10 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { FooterSection } from './styles';
 
 function Footer() {
     return(
-        <h1>Footer</h1>
+        <FooterSection>Footer</FooterSection>
     );
 }
 

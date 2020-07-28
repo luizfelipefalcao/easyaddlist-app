@@ -18,6 +18,20 @@ export const Main = styled.div`
   }
 `;
 
+export const ListTitle = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    padding: 5px;
+    margin-top: 5px;
+
+    h2 {
+    color: #055e77;
+    font-size: 1.5rem;
+    }
+`;
+
 export const FormList = styled.form`
     width: 90%;
     height: 40px;
@@ -31,8 +45,8 @@ export const FormList = styled.form`
         font-size: 1rem;
         padding: 5px 10px;
         margin-left: 5px;
-        border-radius: 50px;
-        border: 2px solid #eee;
+        border-radius: 15px;
+        border: 2px solid #ddd;
         color: #ccc;
     }
 
@@ -43,19 +57,9 @@ export const FormList = styled.form`
         justify-self: center;
         color:  #006A88;
     }
-`;
 
-export const ListTitle = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100%;
-    padding: 5px;
-    margin-top: 5px;
-
-    h2 {
-    color: #055e77;
-    font-size: 1.1rem;
+    a:hover {
+        color: #04475a;
     }
 `;
 

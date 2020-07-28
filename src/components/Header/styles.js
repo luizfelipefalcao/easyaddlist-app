@@ -13,17 +13,28 @@ export const Head  = styled.header`
 
     div {
         width: 100%;
-        max-width:1280px;
+        max-width: 1280px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
+ 
+        a {
+            text-decoration: none;
+            color: #006A88;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 2rem;
+            font-weight: 900;
 
-    a {
-        text-decoration: none;
-        color: #006A88;
-        cursor: pointer;
-        padding: 5px 10px;
+            @media(max-width: 678px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 10rem;
+                font-weight: 900;
+
+            }
+        }
     }
 `;
 
@@ -37,21 +48,37 @@ export const Logo = styled.div`
     font-size: 2.5rem;
     font-weight: bolder;
     color: #006A88;
+
+    @media(max-width: 678px) {
+        margin-left: 5px;
+        font-size: 2rem;
+    }
 `;
 
 export const About = styled.div`
     padding: 5px 10px;
-    /* margin-right: 30px; */
+    margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 
+    @media(max-width: 678px) {
+        margin-left: 5px;
+        font-size: 2rem;
+    }
+    
     h2 {
         color: #006A88;
         font-size: 1.8rem;
         font-weight: bolder;
+
+        @media(max-width: 678px) {
+            font-size: 0;
+        }
     }
+
 `;
+
 
 
 

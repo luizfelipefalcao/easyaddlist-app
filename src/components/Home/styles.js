@@ -1,47 +1,49 @@
 import styled from 'styled-components'
 
 export const Main = styled.div`
-    min-height: 250px;
-    width: 50%;
+    min-height: 300px;
+    width: 60%;
     margin: 50% auto;
     margin-top: 50px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.3);
-
-    @media(max-width: 679px) {
-    width: 90%;
-    min-height: 200px;
-  }
-`;
-
-export const NewList = styled.div`
-    height: 280px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    h1 {
-        font-size: 2rem;
-        color: rgba(204, 204, 204, 0.5);
+    @media(max-width: 679px) {
+        width: 90%;
+        min-height: 230px;
     }
-`;
 
-export const PlusBtn = styled.div`
-        text-align: center;
+    h1 {
+        display: flex;
+        align-self: center;
+        font-size: 2.2rem;
+        margin: 25% auto;
+        color: #ddd;
 
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            margin-right: 10px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-end;
-            color: #006A88;
+        @media(max-width: 679px) {
+            font-size: 2rem;
+        }
+    }
+
+    a {
+        display: flex;
+        align-self: flex-end;
+        font-size: 3rem;
+        color: #006A88;
+        margin: 5px;
+
+        &:hover {
+            color: #023442;
         }
 
-        h2:hover {
-            color:#023442
+        @media(max-width: 679px) {
+            font-size: 2.5rem;
         }
+    }
 `;
