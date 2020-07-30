@@ -25,43 +25,49 @@ class NewList extends Component {
 
     addTask = () => {
     
-      const Items={
-              value:this.input.current.value
-          };
-  
-          if(localStorage.getItem('list')==null){
-              const list=[]
-              list.push(Items);
-              localStorage.setItem("list",JSON.stringify(list))
-          }
-          else{
-              const list=JSON.parse(localStorage.getItem('list'))
-              list.push(Items)
-              localStorage.setItem("list",JSON.stringify(list))
-          }
-          this.setState({
-              list:JSON.parse(localStorage.getItem('list'))
-          });
-          this.setState({ description: '' });
-      }
-  
-      componentDidMount() {
-          const list = window.localStorage.getItem('list');
-          const parsedList = JSON.parse(list);
-          if(list == null){
-              return false
-          }
-          else{
-              this.setState({
-                  list: parsedList,
-              })
-          }
-      }
+    if(this.state.description !== ''){    
+        const Items={
+            id:uuid.v4(),
+            value:this.input.current.value,
+            Date: new Date().toUTCString()
+        };
 
-      deleteItem=(event)=> {
+            if(localStorage.getItem('list')==null){
+                const list=[]
+                list.push(Items);
+                localStorage.setItem("list",JSON.stringify(list))
+            }
+            else{
+                const list=JSON.parse(localStorage.getItem('list'))
+                list.push(Items)
+                localStorage.setItem("list",JSON.stringify(list))
+            }
+            this.setState({
+                list:JSON.parse(localStorage.getItem('list'))
+            });
+            this.setState({ description: '' });
+        } else {
+            return alert('Type a new item!!');
+        }
+    }
+
+    componentDidMount() {
+        const list = window.localStorage.getItem('list');
+        const parsedList = JSON.parse(list);
+        if(list == null){
+            return false
+        }
+        else{
+            this.setState({
+                list: parsedList,
+            })
+        }
+    }
+
+    deleteItem = (event) => {
         
         let index = event.target.getAttribute('data-key')
-        let listValue=JSON.parse(localStorage.getItem('list'));
+        let listValue = JSON.parse(localStorage.getItem('list'));
         listValue.splice(index,1)
         this.setState({list:listValue});
         localStorage.setItem('list',JSON.stringify(listValue))
