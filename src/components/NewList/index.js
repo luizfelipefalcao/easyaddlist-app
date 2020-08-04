@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import { Link, withRouter } from 'react-router-dom';
-import { Main, FormList, ListTitle, ListBody, TableBody, TdDescription, TdButton } from './styles';
-import { AiFillPlusCircle, AiOutlineUndo } from 'react-icons/ai';
-import { BsCheckAll } from 'react-icons/bs';
-import { FaTrashAlt } from 'react-icons/fa';
+import { Main, FormList, ListTitle, ListBody, ListItem } from './styles';
+import { AiFillPlusCircle } from 'react-icons/ai';
+// import { FaCheck } from 'react-icons/fa';
+// import { MdDelete } from 'react-icons/md';
 
 class NewList extends Component {
     constructor(props){
         super(props);
   
-        this.input=React.createRef()
+        this.input = React.createRef()
         this.state = {
             description: '',
             listTitle: localStorage.listname,
@@ -17,6 +18,7 @@ class NewList extends Component {
         }
         
         this.handleChange = this.handleChange.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
     handleChange(e) {
@@ -25,12 +27,12 @@ class NewList extends Component {
 
     addTask = () => {
     
-    if(this.state.description !== ''){    
-        const Items={
-            id:uuid.v4(),
-            value:this.input.current.value,
-            Date: new Date().toUTCString()
-        };
+        if(this.state.description !== ''){    
+            const Items = {
+                id:uuid.v4(),
+                value:this.input.current.value,
+                isDone: false
+            };
 
             if(localStorage.getItem('list')==null){
                 const list=[]
@@ -42,13 +44,28 @@ class NewList extends Component {
                 list.push(Items)
                 localStorage.setItem("list",JSON.stringify(list))
             }
+
             this.setState({
-                list:JSON.parse(localStorage.getItem('list'))
+                list: JSON.parse(localStorage.getItem('list'))
             });
+
             this.setState({ description: '' });
+
         } else {
             return alert('Type a new item!!');
         }
+    }
+
+    deleteItem(e) {
+        let index = e.target.getAttribute('data-key')
+        let listValue = JSON.parse(localStorage.getItem('list'));
+        listValue.splice(index, 1)
+        this.setState({list: listValue});
+        localStorage.setItem('list', JSON.stringify(listValue)); 
+    }
+
+    checkItem = () => {
+        alert('checked');
     }
 
     componentDidMount() {
@@ -64,16 +81,6 @@ class NewList extends Component {
         }
     }
 
-    deleteItem = (event) => {
-        
-        let index = event.target.getAttribute('data-key')
-        let listValue = JSON.parse(localStorage.getItem('list'));
-        listValue.splice(index,1)
-        this.setState({list:listValue});
-        localStorage.setItem('list',JSON.stringify(listValue))
-    }
-
-
     render(){
         return (
             <Main>
@@ -88,48 +95,48 @@ class NewList extends Component {
                         value={this.state.description}
                         onChange={this.handleChange}
                         ref={this.input}
-                        // ref={(e) => (this._taskInput = e)}
                     />
                     <Link to='/newlist'>
                         <AiFillPlusCircle onClick={this.addTask}/>
                     </Link>
                 </FormList>
                 
-                <TodoItems list={this.state.list}/>
-
+                <ListBody>
+                    <ListItem>
+                    {
+                        this.state.list.map((item,index)=>
+                        {
+                            return(
+                                <li key={item.id}> {item.value}
+                                    { item.isDone === false
+                                    ? (
+                                        <button
+                                        type="button" 
+                                        value="delete" 
+                                        data-key={index} 
+                                        onClick={this.checkItem}>
+                                        Check
+                                        </button>
+                                    ) : (
+                                        <button
+                                        type="button" 
+                                        value="delete" 
+                                        data-key={index} 
+                                        onClick={this.deleteItem}>
+                                        Delete
+                                        </button>    
+                                    )
+                                    }
+                                </li>
+                            )
+                        })
+                    } 
+                    </ListItem>
+                </ListBody>
             </Main>
-        )
+            );
     }
 }
-
-class TodoItems extends Component {
-    render() {
-      return (
-        <ListBody>
-            <TableBody>
-            {this.props.list.map((item, index) => {
-              return (
-                <tr key={item.id}>
-                  <TdDescription>
-                    {item.value}
-                  </TdDescription>
-                  <TdButton>
-                      <BsCheckAll color={'green'}/>
-                      <FaTrashAlt color={'red'} size={15} 
-                        type="button"
-                        value="delete" 
-                        data-key={index} 
-                        onClick={this.deleteItem}/>
-                      <AiOutlineUndo color={'yellow'}/>
-                  </TdButton>
-                </tr>
-              );
-            })}
-            </TableBody>
-        </ListBody>
-      );
-    }
-  }
 
 export default withRouter(NewList);
 

@@ -23,36 +23,38 @@ export const ListTitle = styled.div`
     align-items: center;
     justify-content: center;
     width:100%;
-    padding: 5px;
+    padding: 0;
     margin-top: 5px;
 
     h2 {
-    color: #055e77;
-    font-size: 1.5rem;
+        color: #555;
+        font-size: 1.5rem;
     }
 `;
 
 export const FormList = styled.form`
-    width: 90%;
+    width: 95%;
     height: 40px;
     margin: 20px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 
     input {
-        height: 2.3rem;
+        height: 2.1rem;
         width: 100%;
-        font-size: 1rem;
+        font-size: .9rem;
         padding: 5px 10px;
         margin-left: 5px;
-        border-radius: 15px;
-        border: 2px solid #ddd;
-        color: #ccc;
+        border-radius: 20px;
+        border: 2px solid #04465866;
+        color: #333;
+        outline: none;
     }
 
     a {
         margin-left: 7px;
-        font-size: 2.5rem;
+        font-size: 2.4rem;
         display: flex;
         justify-self: center;
         color:  #006A88;
@@ -63,36 +65,57 @@ export const FormList = styled.form`
     }
 `;
 
-export const ListBody = styled.table`
+
+
+export const ListBody = styled.div`
     width: 90%;
-    margin-top: 10px;
+    padding: 5px;
 `;
 
-export const TableBody = styled.tbody`
+export const ListItem = styled.ul`
+    list-style: none;
+    padding: 5px;
 
-    tr {
-        padding: 5px;
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size:1.2rem;
+
+        a {
+            color: ${props => props.color};
+            size: ${props => props.size};
+            cursor: ${props => props.cursor};
+        }
     }
-
-    `;
-export const TdDescription = styled.td`
-    height: 2rem;
-    width: 80%;
-    padding-left: 10px;
-    color: #000;
-    font-size: 1.1rem;
-    text-decoration: dotted;
-  text-decoration-color: red;
-    /* background: lightblue; */
-
 `;
+// export const TableBody = styled.tbody`
 
-export const TdButton = styled.td`
-    height: 2rem;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.1rem;
+//     tr {
+//         padding: 5px;
+//     }
 
-`;
-        
+//     `;
+// export const TdDescription = styled.td`
+//     height: 2rem;
+//     width: 90%;
+//     padding-left: 10px;
+//     color: #333;
+//     font-size: 1.1rem;
+// `;
+
+// export const TdButton = styled.td`
+//     height: 2rem;
+//     display:flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     font-size: 1.1rem;
+
+//     a {
+//         color: ${props => props.color};
+//         size: ${props => props.size};
+//         cursor: ${props => props.cursor};
+//     }
+
+// `;

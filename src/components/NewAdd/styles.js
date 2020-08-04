@@ -26,17 +26,16 @@ export const AddName = styled.div`
     align-items: center;
 
     input {
-        height: 40px;
+        height: 2.5rem;
         width: 100%;
         margin-left: 10px;
         padding: 5px;
-        border-radius: 15px;
-        border: 2px solid #ddd;
+        border-radius: 20px;
+        border: 2px solid #04465866;
         color: #888;
         font-size: 1rem;
         padding: 5px 15px;
-
-
+        outline: none;
     }
 
     a {
