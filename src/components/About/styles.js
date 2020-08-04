@@ -1,10 +1,28 @@
 import styled from 'styled-components';
 
+export const Arrow = styled.div`
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    color: #006A88;
+
+
+    a {
+        font-size: 1.8rem;
+        display: flex;
+        align-self: center;
+        color: #006A88;
+    }   
+
+`;
+
 export const Tutorial = styled.div`
     min-height: 300px;
     width: 50%;
     margin: 50% auto;
-    margin-top: 50px;
+    margin-top: 10px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;

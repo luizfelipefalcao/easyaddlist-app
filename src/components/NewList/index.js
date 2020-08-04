@@ -64,8 +64,12 @@ class NewList extends Component {
         localStorage.setItem('list', JSON.stringify(listValue)); 
     }
 
-    checkItem = () => {
-        alert('checked');
+    checkItem = (e) => {
+        let index = e.target.getAttribute('data-key')
+        let listValue = JSON.parse(localStorage.getItem('list'));
+        listValue.splice(index, 1)
+        this.setState({list: listValue});
+        localStorage.setItem('list', JSON.stringify(listValue)); 
     }
 
     componentDidMount() {
@@ -112,7 +116,7 @@ class NewList extends Component {
                                     ? (
                                         <button
                                         type="button" 
-                                        value="delete" 
+                                        value="check" 
                                         data-key={index} 
                                         onClick={this.checkItem}>
                                         Check
