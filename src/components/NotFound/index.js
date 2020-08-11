@@ -1,12 +1,21 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import { Main } from './styles';
+import {Link, withRouter} from 'react-router-dom';
+import { Main, Arrow } from './styles';
+import {BsArrowLeft} from 'react-icons/bs';
+
 
 const NotFound = () => {
     return(
-        <Main>
-            <h1>Page Not Found!!</h1>
-        </Main>
+        <>
+            <Arrow>
+                <Link to='/'>
+                    <BsArrowLeft/> 
+                </Link>
+            </Arrow>
+            <Main>
+                <h1>Page Not Found!!</h1>
+            </Main>
+        </>
     )
 }
 

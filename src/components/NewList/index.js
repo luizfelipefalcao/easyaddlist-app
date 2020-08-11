@@ -3,8 +3,7 @@ import uuid from 'uuid';
 import { Link, withRouter } from 'react-router-dom';
 import { Main, FormList, ListTitle, ListBody, ListItem } from './styles';
 import { AiFillPlusCircle } from 'react-icons/ai';
-// import { FaCheck } from 'react-icons/fa';
-// import { MdDelete } from 'react-icons/md';
+
 
 class NewList extends Component {
     constructor(props){
@@ -31,7 +30,6 @@ class NewList extends Component {
             const Items = {
                 id:uuid.v4(),
                 value:this.input.current.value,
-                isDone: false
             };
 
             if(localStorage.getItem('list')==null){
@@ -66,10 +64,10 @@ class NewList extends Component {
 
     checkItem = (e) => {
         let index = e.target.getAttribute('data-key')
-        let listValue = JSON.parse(localStorage.getItem('list'));
-        listValue.splice(index, 1)
-        this.setState({list: listValue});
-        localStorage.setItem('list', JSON.stringify(listValue)); 
+        let doneValue = JSON.parse(localStorage.getItem('list'));
+        doneValue.splice(index, 1, 'true')
+        this.setState({list: doneValue});
+        localStorage.setItem('list', JSON.stringify(doneValue)); 
     }
 
     componentDidMount() {
@@ -111,27 +109,17 @@ class NewList extends Component {
                         this.state.list.map((item,index)=>
                         {
                             return(
-                                <li key={item.id}> {item.value}
-                                    { item.isDone === false
-                                    ? (
-                                        <button
-                                        type="button" 
-                                        value="check" 
-                                        data-key={index} 
-                                        onClick={this.checkItem}>
-                                        Check
-                                        </button>
-                                    ) : (
-                                        <button
-                                        type="button" 
-                                        value="delete" 
-                                        data-key={index} 
-                                        onClick={this.deleteItem}>
-                                        Delete
-                                        </button>    
-                                    )
-                                    }
-                                </li>
+                                <>
+                                    <li key={item.id}> {item.value}
+                                            <button
+                                                type="button" 
+                                                value="delete" 
+                                                data-key={index} 
+                                                onClick={this.deleteItem}
+                                            >Delete
+                                            </button> 
+                                    </li>
+                                </>
                             )
                         })
                     } 

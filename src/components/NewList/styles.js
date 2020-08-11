@@ -82,40 +82,18 @@ export const ListItem = styled.ul`
         justify-content: space-between;
         align-items: center;
         font-size:1.2rem;
+        line-height: 2.5rem;
 
-        a {
-            color: ${props => props.color};
-            size: ${props => props.size};
-            cursor: ${props => props.cursor};
+        button {
+            background: #006A88;
+            outline: none;
+            padding: 1px 5px;
+            color: #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bolder;
+            font-family: 'Baloo 2', sans-serif;
         }
     }
+
 `;
-// export const TableBody = styled.tbody`
-
-//     tr {
-//         padding: 5px;
-//     }
-
-//     `;
-// export const TdDescription = styled.td`
-//     height: 2rem;
-//     width: 90%;
-//     padding-left: 10px;
-//     color: #333;
-//     font-size: 1.1rem;
-// `;
-
-// export const TdButton = styled.td`
-//     height: 2rem;
-//     display:flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     font-size: 1.1rem;
-
-//     a {
-//         color: ${props => props.color};
-//         size: ${props => props.size};
-//         cursor: ${props => props.cursor};
-//     }
-
-// `;
