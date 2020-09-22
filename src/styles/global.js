@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Mono|Baloo+2&display=swap');
   
   * {
     margin: 0;
@@ -17,12 +16,8 @@ const GlobalStyles = createGlobalStyle`
 
   }
 
-  /* html, body {
-    height: 100%;
-  } */
-
   body {
-    font-family: 'Baloo 2', sans-serif;
+    font-family: sans-serif;
     -webkit-font-smoothing: antialiased !important;
   }
 `
