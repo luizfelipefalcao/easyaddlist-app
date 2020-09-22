@@ -2,6 +2,8 @@
 
 This project was bootstrapped with Create React App.
 
+Live Demo for App is at https://easyaddlist.netlify.app
+
 ## What is inside?
 
 This project uses lot of stuff as:
